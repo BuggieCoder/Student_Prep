@@ -61,7 +61,7 @@ def get_api_key():
 
 uploaded_file = PyPDFLoader("CADWReg1.pdf")
 # Let user upload a file
-uploaded_file = st.file_uploader("Choose a file", type=['pdf'])
+#uploaded_file = st.file_uploader("Choose a file", type=['pdf'])
 
 # If user uploaded a file, check if it is a pdf
 if uploaded_file is not None:
