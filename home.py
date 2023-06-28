@@ -27,6 +27,10 @@ openai_api_key = st.secrets["OPENAI_API_KEY"]
 loader = PyPDFLoader("CADWReg.pdf")
 pages = loader.load_and_split()
 
+index = VectorstoreIndexCreator(
+    vectorstore_cls=DocArrayInMemorySearch
+).from_loaders([loader])
+
 prompt_template = """Use the context below to write an answer to the question.:
     Context: {context}
     Question: {topic}
