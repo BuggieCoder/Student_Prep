@@ -14,6 +14,9 @@ from PyPDF2 import PdfReader
 import tempfile
 from llm_helper_function import split_text_q_gen,split_text_q_answer, split_text_docs_vector, extract_text_from_pdf_for_q_gen,extract_text_from_pdf_for_q_answer, create_questions, create_vectordatabase
 
+from langchain.indexes import VectorstoreIndexCreator
+from langchain.vectorstores import DocArrayInMemorySearch
+
 st.title('Welcome to RegBot 1.0')
 
 st.markdown("RegBot 1.0 is capable of answering questions regarding CA drinking water regulations.")
