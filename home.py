@@ -20,8 +20,9 @@ st.markdown("RegBot 1.0 is capable of answering questions regarding CA drinking 
 
 # Load env files
 # load_dotenv()
-os.environ['OPENAI_API_KEY'] == st.secrets["OPENAI_API_KEY"]
-openai_api_key = os.environ.get('OPENAI_API_KEY')
+#os.environ['OPENAI_API_KEY'] == st.secrets["OPENAI_API_KEY"]
+#openai_api_key = os.environ.get('OPENAI_API_KEY')
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 prompt_template = """Use the context below to write an answer to the question.:
     Context: {context}
