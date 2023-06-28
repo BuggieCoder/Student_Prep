@@ -13,3 +13,4 @@ numpy
 pypdf
 faiss-cpu
 pypdf2
+langchain[docarray]
