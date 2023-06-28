@@ -27,12 +27,12 @@ st.markdown("RegBot 1.0 is capable of answering questions regarding CA drinking 
 #openai_api_key = os.environ.get('OPENAI_API_KEY')
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 
-loader = PyPDFLoader("CADWReg.pdf")
-pages = loader.load_and_split()
+#loader = PyPDFLoader("CADWReg.pdf")
+#pages = loader.load_and_split()
 
-index = VectorstoreIndexCreator(
-    vectorstore_cls=DocArrayInMemorySearch
-).from_loaders([loader])
+#index = VectorstoreIndexCreator(
+#    vectorstore_cls=DocArrayInMemorySearch
+#).from_loaders([loader])
 
 prompt_template = """Use the context below to write an answer to the question.:
     Context: {context}
@@ -59,6 +59,7 @@ def get_api_key():
 #with st.container():
     #st.markdown("Make sure you've entered your OpenAI API Key. Don't have an API key yet? Read [this](https://www.howtogeek.com/885918/how-to-get-an-openai-api-key/) article on how to get an API key.")
 
+uploaded_file = PyPDFLoader("CADWReg1.pdf")
 # Let user upload a file
 uploaded_file = st.file_uploader("Choose a file", type=['pdf'])
 
