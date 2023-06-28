@@ -14,13 +14,14 @@ from PyPDF2 import PdfReader
 import tempfile
 from llm_helper_function import split_text_q_gen,split_text_q_answer, split_text_docs_vector, extract_text_from_pdf_for_q_gen,extract_text_from_pdf_for_q_answer, create_questions, create_vectordatabase
 
-st.title('🦜🔗 Smart Study Hub')
+st.title('Welcome to RegBot 1.0')
 
-st.markdown("Smart Study Hub is a tool that helps you to study more efficiently. It generates questions from your study material and answers them for you. This way, you can test your knowledge and learn more effectively.")
+st.markdown("RegBot 1.0 is capable of answering questions regarding CA drinking water regulations.")
 
 # Load env files
 # load_dotenv()
-# openai_api_key = os.environ.get('OPENAI_API_KEY')
+os.environ['OPENAI_API_KEY'] == st.secrets["OPENAI_API_KEY"]
+openai_api_key = os.environ.get('OPENAI_API_KEY')
 
 prompt_template = """Use the context below to write an answer to the question.:
     Context: {context}
@@ -39,10 +40,10 @@ if 'questions' not in st.session_state:
     st.session_state['questions_to_answers'] = 'empty'
 
 def get_api_key():
-    input_text = st.text_input(label="OpenAI API Key ",  placeholder="Ex: sk-2twmA8tfCb8un4...", key="openai_api_key_input", help="How to get an OpenAI API Key: https://www.howtogeek.com/885918/how-to-get-an-openai-api-key/")
+    #input_text = st.text_input(label="OpenAI API Key ",  placeholder="Ex: sk-2twmA8tfCb8un4...", key="openai_api_key_input", help="How to get an OpenAI API Key: https://www.howtogeek.com/885918/how-to-get-an-openai-api-key/")
     return input_text
 
-openai_api_key = get_api_key()
+#openai_api_key = get_api_key()
 
 with st.container():
     st.markdown("Make sure you've entered your OpenAI API Key. Don't have an API key yet? Read [this](https://www.howtogeek.com/885918/how-to-get-an-openai-api-key/) article on how to get an API key.")
